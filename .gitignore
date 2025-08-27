@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# System files
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# Node.js
+node_modules/
+
+# Others
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.swo

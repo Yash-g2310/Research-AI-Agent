@@ -1,0 +1,31 @@
+{
+  "name": "research-ai-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "agent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node agent.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yash-g2310/Research-AI-Agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yash-g2310/Research-AI-Agent/issues"
+  },
+  "homepage": "https://github.com/Yash-g2310/Research-AI-Agent#readme",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/openai": "^0.6.9",
+    "dotenv": "^17.2.1",
+    "langchain": "^0.3.31",
+    "puppeteer": "^24.17.0",
+    "serpapi": "^2.2.1"
+  }
+}
