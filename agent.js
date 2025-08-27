@@ -24,13 +24,10 @@ async function main() {
     model: 'gemini-2.0-flash',
     contents: reasoningPrompt,
   });
-//   console.log("this is the reasoning res")
-//   console.log(reasoningRes)
-//   console.log("this is the content")
-//   console.log(reasoningRes.candidates[0].content.parts[0].text);
+
   const questions = reasoningRes.candidates[0].content.parts[0].text.split("\n").filter(q => q.trim());
   questions.shift();
-//   console.log("\n🧠 Research Questions:\n", questions);
+  console.log("\n🧠 Research Questions:\n", questions);
 
 //   // ---- 3. Act: Use Puppeteer to search ----
   const browser = await puppeteer.launch({ headless: false, defaultViewport: null, });
@@ -39,11 +36,6 @@ async function main() {
   console.log("\n🌐 Browser launched.");
 
   let memory = [];
-  // let questions = [
-  //   '1.  How does investment in renewable energy infrastructure affect GDP growth and job creation in different countries, considering varying levels of economic development and resource endowments?',
-  // '2.  What is the impact of fluctuating renewable energy prices and government subsidies on the competitiveness of renewable energy industries compared to fossil fuel-based industries, and how does this affect international trade patterns?',
-  // '3.  To what extent does the adoption of renewable energy technologies contribute to energy independence, reduce reliance on fossil fuel imports, and mitigate the economic risks associated with climate change in various global regions?'
-  // ];
 
   for (const question of questions) {
     console.log(`\n🔎 Searching: ${question}`);
@@ -61,10 +53,10 @@ async function main() {
     await page.type("input[name='q']", question);
     await page.keyboard.press("Enter");
     await page.waitForSelector(".react-results--main");
-    console.log("got it")
+
     const links = await page.$$eval('[data-testid="result-title-a"]', anchors =>
-  anchors.slice(0, 3).map(a => a.href)
-);
+      anchors.slice(0, 3).map(a => a.href)
+    );
     
     console.log("🌐 Top results:", links);
 
@@ -97,13 +89,11 @@ Here is research material collected from multiple sources:\n${combinedText}
 Please write a clear, structured summary (around 4-5 paragraphs). 
 Highlight key insights, trends, and evidence.`;
 
-console.log(finalPrompt)
   const summaryRes = await genAI.models.generateContent({
     model: 'gemini-2.0-flash',
     contents: finalPrompt,
   });
-  console.log("this is the summary res")
-  console.log(summaryRes)
+
   console.log("\n📝 Final Answer:\n", summaryRes.candidates[0].content.parts[0].text);
 
   await browser.close();
