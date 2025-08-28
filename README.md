@@ -1,6 +1,14 @@
-# Research AI Agent
-
+# Research AI Agent For Workshop - Google GenAI + Puppeteer
 This project is a simple AI-powered research assistant that automates web searches and summarizes findings using Google Gemini AI. It is designed for beginners and can be run locally or on Replit.
+
+## Table of Contents
+- [Features](#features)
+- [Setup Instructions (Local)](#setup-instructions-local)
+- [Setup Instructions (Replit)](#setup-instructions-replit)
+- [Troubleshooting](#troubleshooting)
+- [How It Works](#how-it-works)\
+- [License](#license)
+
 
 ## Features
 - Generates research questions from a user topic using Gemini AI
@@ -13,20 +21,65 @@ This project is a simple AI-powered research assistant that automates web search
 ## Setup Instructions (Local)
 
 ### 1. Prerequisites
-- **Node.js** (version 18 or above recommended)
-- **npm** (comes with Node.js)
-- **Google Gemini API Key** (get one from [Google AI Studio](https://makersuite.google.com/app/apikey))
 
-### 2. Clone the Repository
+- **Node.js**  
+  Ensure you have Node.js installed (version 18 or above recommended).  
+  [Download Node.js](https://nodejs.org/)  
+  Verify installation by running:
+  ```bash
+  node -v
+  npm -v
+  ```
+
+- **Puppeteer**  
+  Puppeteer is a Node.js library for automating Chrome/Chromium. It enables web scraping, browser automation, and more.  
+  It will be installed automatically with project dependencies.
+
+- **Google GenAI Library**  
+  The Google GenAI library is required to interact with Gemini AI.  
+  It will be installed automatically with project dependencies.
+
+- **Git** (optional but recommended)  
+  Git is useful for cloning the repository and managing code versions.  
+  [Download Git](https://git-scm.com/downloads)
+
+- **Google Gemini API Key**  
+  Required to access Gemini AI features.  
+  To generate your Gemini API key:
+  1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+  2. Sign in with your Google account
+  3. Click "Create API Key" and
+
+### 2. Clone the Repository (optional)
+
+If you're working with a repository hosted on platforms like GitHub, you can "clone" the repository to download all the project files to your local machine. This requires Git to be installed on your computer.
+
+To clone the repository, open your terminal (or command prompt) and run the following commands:
 ```bash
 git clone https://github.com/Yash-g2310/Research-AI-Agent.git
 cd Research-AI-Agent
 ```
+After running these commands, you'll have a local copy of the project and will navigate into the project's directory.
+
+**OR**
+
+You can also download the project as a ZIP file if you prefer not to use Git. To do this:
+1. Visit the repository page in your browser.
+2. Look for a "Code" button or "Download ZIP" option.
+3. Download and extract the ZIP file to a folder on your machine.
+
+After downloading or cloning, navigate into the project folder using:
+```bash
+cd Research-AI-Agent
+```
 
 ### 3. Install Dependencies
+
+In the project directory, install the required Node.js dependencies:
 ```bash
 npm install
 ```
+This will automatically install Puppeteer, Google GenAI library, and other dependencies listed in `package.json`.
 
 ### 4. Configure Environment Variables
 Create a file named `.env` in the project folder and add your Gemini API key:
@@ -70,13 +123,6 @@ npm start
 2. It searches DuckDuckGo for each question and collects the top results
 3. It scrapes the content from those pages
 4. It asks Gemini AI to summarize all the findings
-
----
-
-## For Freshers
-- No prior coding experience is required
-- Just follow the steps above and ask for help if you get stuck
-- You can experiment with changing the research topic in `agent.js`
 
 ---
 
