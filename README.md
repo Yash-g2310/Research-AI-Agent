@@ -82,7 +82,7 @@ npm install
 - This will automatically install Puppeteer, Google GenAI library, and other dependencies listed in `package.json`.
 
 ### 4. Configure Environment Variables
-- Create a file named `.env` in the project folder and add your Gemini API key:
+- Go to `.env` in the project folder and add your Gemini API key:
 ```
 GEMINI_API_KEY=your_api_key_here
 ```
