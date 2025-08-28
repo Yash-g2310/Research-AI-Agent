@@ -40,7 +40,11 @@ rl.question(chalk.yellowBright("\n💡 Enter your research topic: "), async (use
         throw err;
       }
 
-      const questions = reasoningRes.candidates[0].content.parts[0].text.split("\n").filter(q => q.trim());
+      let questions = reasoningRes.candidates[0].content.parts[0].text.split("\n").filter(q => q.trim());
+      questions = questions.filter(q => {
+        const firstChar = q.trim()[0];
+        return firstChar >= '1' && firstChar <= '9';
+      });
       console.log(chalk.greenBright("\n🧠 Research Questions:"));
       questions.forEach((q, i) => {
         console.log(chalk.cyanBright(`${i + 1}. ${q}`));
