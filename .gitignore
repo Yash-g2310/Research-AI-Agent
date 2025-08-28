@@ -28,8 +28,8 @@ build/
 Thumbs.db
 
 # Environment variables
-.env
-.env.*
+# .env
+# .env.*
 
 # Node.js
 node_modules/
